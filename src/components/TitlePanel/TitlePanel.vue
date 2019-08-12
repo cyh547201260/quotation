@@ -4,7 +4,7 @@
 		<el-container class="cont-box bg-dark inp-dark">
 			<el-form ref="titleData" :rules="rules" :model='titleData'  label-width="100px" style="width:100%">
 				<div class="company-logo-show">
-					<img src="../../assets/img/insgeekLogo02.png"/>
+					<img src="../../assets/img/it-title-logo.png"/>
 					<el-button type="primary" class="logo-show-btn" @click="changeLogoShow">{{titleData.logoShow ? '显示' : '隐藏'}}</el-button>
 				</div>
 				<el-form-item label="客户名称：">
@@ -85,7 +85,7 @@
 	}
 	.company-logo-show img{
 		width: 100px;
-		transform: translateY(13px);
+		transform: translateY(8px);
 		margin-right: 20px;
 	}
 	.company-logo-show .logo-show-btn{

@@ -284,6 +284,26 @@
 	        				'disabled':false,
 	        			},
 	        			1:{
+	        				'name':'综合医疗-门诊',
+	        				'list':{
+	        					'amount':{
+	        						'name':'保额',
+	        						'value':'',
+	        						'unit':'元'
+	        					},
+	        					'deduction':{
+	        						'name':'免赔额',
+	        						'value':'',
+	        						'unit':'元'
+	        					},
+	        					'payment':{
+	        						'name':'赔付比',
+	        						'value':''
+	        					},
+	        				},
+	        				'disabled':false,
+	        			},
+	        			2:{
 	        				'name':'综合医疗-住院',
 	        				'list':{
 	        					'amount':{
@@ -395,7 +415,7 @@
 	        				},
 	        				'disabled':false,
 	        			},
-	        			2:{
+	        			4:{
 	        				'name':'自驾（乘）车',
 	        				'list':{
 	        					'amount':{
@@ -409,10 +429,10 @@
 	        		},
 	        	},
 	        	4:{
-	        		name:'30种重大疾病',
+	        		name:'重大疾病',
 	        		list:{
 	        			0:{
-	        				'name':'飞机',
+	        				'name':'重大疾病',
 	        				'list':{
 	        					'amount':{
 	        						'name':'保额',
@@ -441,6 +461,22 @@
 	        		}
 	        	},
 	        	6:{
+	        		name:'疾病身故',
+	        		list:{
+	        			0:{
+	        				'name':'疾病身故',
+	        				'list':{
+	        					'amount':{
+	        						'name':'保额',
+	        						'value':'',
+	        						'unit':'元'
+	        					},
+	        				},
+	        				'disabled':false,
+	        			},
+	        		}
+	        	},
+	        	7:{
 	        		name:'百万医疗保障',
 	        		list:{
 	        			0:{
@@ -485,7 +521,7 @@
 	        			},
 	        		},
 	        	},
-	        	7:{
+	        	8:{
 	        		name:'女性生育',
 	        		list:{
 	        			0:{
@@ -501,7 +537,7 @@
 	        			},
 	        		},
 	        	},
-	        	8:{
+	        	9:{
 	        		name:'一般住院津贴',
 	        		list:{
 	        			0:{
