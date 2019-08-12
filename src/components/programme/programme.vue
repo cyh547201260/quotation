@@ -546,10 +546,9 @@
 	    		var ele = document.getElementById("imgTempBox");
 		      	html2canvas(ele,{
 		      		x:-3500,
-		      		y:0
+		      		y:0,
+		      		backgroundColor:'null'
 		      	}).then(function(canvas) {
-		      		var context = canvas.getContext('2d');
-		      		context.fillStyle = 'rgba(255, 255, 255, 0)';
 		      		document.getElementById("imgShowTarget").setAttribute('src', canvas.toDataURL())
 				});
 				
@@ -603,7 +602,8 @@
 	    		var ele = document.getElementById("imgTempBox");
 		      	html2canvas(ele,{
 		      		x:-3500,
-		      		y:0
+		      		y:0,
+		      		backgroundColor:'null'
 		      	}).then(function(canvas) {
 		      		_this.downloadFile(canvas.toDataURL(), _this.titleData.programmeTitle)
 				});
@@ -937,7 +937,6 @@
 	.img-show-box{
 	    position: absolute;
 	    width: 700px;
-	    background: paleturquoise;
 	    height: 90%;
 	    left: 50%;
 	    margin-left: -350px;

@@ -126,8 +126,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="it-footer-over">
-			<img src="../../assets/img/it-page-foot-over.png"/>
+		<div class="it-footer-over" style="bottom: -2px;">
+			<img style="width: 100%;" src="../../assets/img/it-page-foot-over.png"/>
 		</div>
 	</div>
 </template>
@@ -232,7 +232,8 @@
 	}
 	.it-outborder-box{
 		width: 990px;
-		margin: 40px auto;
+		margin: 0 auto;
+		margin-bottom: 0;
 		border: 10px solid #00aca0;
 		background: white;
 	}
