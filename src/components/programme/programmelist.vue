@@ -96,7 +96,7 @@
 										    	<span slot="suffix" v-text="listitem.unit" v-if="listitem.unit"></span>
 										    </el-autocomplete>
 										    
-										    <el-input v-model="listitem.value" size="mini" v-if="listkey == 'other'">
+										    <el-input v-model="listitem.value" size="mini" v-if="listkey == 'other'" class="other-input">
 										    </el-input>
 										    
 									</el-form-item>
@@ -331,6 +331,9 @@
 	.insur-cont-outbox .el-autocomplete .el-input{
 		width: 100%;
 	}
+	.other-input{
+		width: 80% !important;
+	}
 	.insur-cont-add-insur{
 		padding: 15px 0;
 	}
@@ -368,7 +371,7 @@
 		margin-right: 30px;
 	}
 	.insur-custom-box .insur-cont-item .el-input {
-	    width: 80%;
+	    width: 100%;
 	}
 	.insur-custom-box .el-radio-button--mini .el-radio-button__inner{
 		padding: 7px 3px;

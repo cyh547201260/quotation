@@ -39,7 +39,7 @@
 					<div class="it-insur-list-box">
 						 <el-table
 						    :data="formatInsurListData(proItem.programmeList)"
-						    border
+						    :border='true'
 						    header-align="center"
 						    :span-method="objectSpanMethod"
 						    header-row-class-name="my-header"
@@ -144,6 +144,7 @@
 		props:['programmePros','titleData','serviceList'],
 		mounted:function(){
 //			this.getImg()
+console.log(this.programmePros)
 		},
 		methods:{
 			//格式化保障责任表格
@@ -174,7 +175,7 @@
 								dataObj['insur_deduction'] = '保险期间内最高给付' + liobj.list.days.value +'天';
 								dataObj['days'] = '保险期间内最高给付' + liobj.list.days.value +'天';
 							}
-							if( liobj.list.hasOwnProperty('other')){
+							if( liobj.list.hasOwnProperty('other') && liobj.list.other.value){
 								dataObj['insur_deduction'] = liobj.list.other.value;
 								dataObj['days'] = liobj.list.other.value;
 							}
@@ -429,11 +430,19 @@
 	
 	.it-insur-list-box .el-table--border td, .el-table--border th, .el-table__body-wrapper .el-table--border.is-scrolling-left~.el-table__fixed {
 	    border-right: 1px solid #fff;
+	    border-bottom: 1px solid #fff;
 	}
 	.it-insur-list-box .el-table td, .el-table th.is-leaf{
 		border-bottom: 1px solid #fff;
 	}
-	.it-insur-list-box .el-table__row{
+	.it-insur-list-box .el-table tr{
+		border-bottom: 1px solid #fff !important;
+	}
+	/*.it-insur-list-box .el-table__row{
 		border-top: 1px solid #fff;
+	}*/
+	.it-insur-list-box td{
+		border-bottom: 1px solid #fff !important;
+		border-left: 1px solid #fff !important;
 	}
 </style>
