@@ -138,6 +138,7 @@
 		data() {
 			return {
 				spanArr:{data:[]},
+				listSpanArr:{data:[]},
 			}
 		},
 		props:['programmePros','titleData','serviceList'],
@@ -169,6 +170,14 @@
 							}else{
 								dataObj['insur_deduction'] = '-'
 							}
+							if(liobj.list.hasOwnProperty('days')){
+								dataObj['insur_deduction'] = '保险期间内最高给付' + liobj.list.days.value +'天';
+								dataObj['days'] = '保险期间内最高给付' + liobj.list.days.value +'天';
+							}
+							if( liobj.list.hasOwnProperty('other')){
+								dataObj['insur_deduction'] = liobj.list.other.value;
+								dataObj['days'] = liobj.list.other.value;
+							}
 							
 							if(liobj.list.hasOwnProperty('payment')){
 								dataObj['insur_payment'] =liobj.list.payment.value
@@ -186,6 +195,7 @@
 			},
 			getSpanData:function(dataArrs){
 				var obj = [1];
+				var rowObj=[];
 				var conIndex=0;
 				if(dataArrs.length > 0){
 					var s;
@@ -199,10 +209,16 @@
 								conIndex = s;
 							}
 						}
+						if(dataArrs[s].hasOwnProperty('days')){
+							rowObj.push(1);
+						}else{
+							rowObj.push('');
+						}
 					}
 				}
 //				this.spanArr = JSON.parse(JSON.stringify(obj));
-				this.$set(this.spanArr,'data',obj)
+				this.$set(this.spanArr,'data',obj);
+				this.$set(this.listSpanArr,'data',rowObj)
 			},
 			objectSpanMethod({ row, column, rowIndex, columnIndex }) {
 		        if (columnIndex === 0) {
@@ -212,6 +228,15 @@
 		        		rowspan:_row,
 		        		colspan:_col
 		        	}
+		        }
+		        if(columnIndex === 3){
+			        if(this.listSpanArr.data[rowIndex] == 1){
+			        	
+			        	return {
+			        		rowspan:1,
+			        		colspan:2
+			        	}
+			        }
 		        }
 	      	}
 		}
@@ -407,5 +432,8 @@
 	}
 	.it-insur-list-box .el-table td, .el-table th.is-leaf{
 		border-bottom: 1px solid #fff;
+	}
+	.it-insur-list-box .el-table__row{
+		border-top: 1px solid #fff;
 	}
 </style>
