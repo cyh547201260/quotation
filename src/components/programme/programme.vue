@@ -966,7 +966,7 @@
 	.img-temp-box{
 		position: absolute;
 		left: -3500px;
-/*		left: 0;*/
+		/*left: 0;*/
 		top: 0;
 		width: 1090px;
 	}
